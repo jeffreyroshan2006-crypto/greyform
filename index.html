@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grayform Studios — Applied Neuroscience & Human Systems Design</title>
+  <meta name="description" content="We translate neuroscience, psychology, behavioral science, and cultural understanding into products, learning systems, technologies, and experiences designed around real people.">
+  
+  <!-- Premium Google Fonts Pairing -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- Premium Preloader -->
+  <div id="preloader" role="presentation">
+    <div class="loader-bg-grain"></div>
+    <div class="loader-grid-lines">
+      <div class="grid-line-v"></div>
+      <div class="grid-line-v"></div>
+      <div class="grid-line-v"></div>
+    </div>
+    <div class="preloader-inner">
+      <div class="preloader-header">
+        <div class="loader-brand">GRAYFORM<span>STUDIOS</span></div>
+        <div class="loader-tag">COGNITIVE SYSTEM DESIGN</div>
+      </div>
+      <div class="preloader-center">
+        <span class="preloader-counter" id="loader-counter">00</span>
+        <span class="preloader-percent">%</span>
+      </div>
+      <div class="preloader-footer">
+        <div class="preloader-phrase" id="loader-phrase">Initializing cognitive frameworks...</div>
+        <div class="preloader-status-bar"><div class="preloader-progress" id="loader-progress"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Cursor elements -->
+  <div class="custom-cursor" id="custom-cursor"></div>
+  <div class="custom-cursor-follower" id="custom-cursor-follower"></div>
+
+  <!-- Ambient noise overlay for film-grain aesthetic -->
+  <div class="grain-overlay"></div>
+
+  <!-- Editorial Grid Lines (Decorative) -->
+  <div class="editorial-lines" aria-hidden="true">
+    <div class="line-v line-v-1"></div>
+    <div class="line-v line-v-2"></div>
+    <div class="line-v line-v-3"></div>
+  </div>
+
+  <!-- Reading Progress Bar -->
+  <div class="scroll-progress-rail" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scroll-progress"></div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="main-header" id="main-header">
+    <div class="header-inner">
+      <div class="header-left-group">
+        <a href="#" class="logo" id="header-logo" aria-label="Grayform Studios Home">
+          Gray<span class="serif-text">form</span>
+        </a>
+      </div>
+      
+      <nav class="nav-container" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#domains" class="nav-link-item" data-index="0">Domains</a></li>
+          <li><a href="#neuropop" class="nav-link-item" data-index="1">Neuropop</a></li>
+          <li><a href="#futures" class="nav-link-item" data-index="2">Futures</a></li>
+          <li><a href="#team" class="nav-link-item" data-index="3">Team</a></li>
+        </ul>
+      </nav>
+      
+      <div class="header-actions">
+        <a href="#contact" class="btn-engage magnetic" data-strength="15">
+          <span>Engage</span>
+        </a>
+        <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-drawer" aria-hidden="true">
+      <div class="drawer-grid">
+        <div class="drawer-links-wrap">
+          <ul class="drawer-links">
+            <li><a href="#domains" class="drawer-link-item"><span>01 /</span> Domains</a></li>
+            <li><a href="#neuropop" class="drawer-link-item"><span>02 /</span> Neuropop</a></li>
+            <li><a href="#futures" class="drawer-link-item"><span>03 /</span> Futures</a></li>
+            <li><a href="#team" class="drawer-link-item"><span>04 /</span> Team</a></li>
+          </ul>
+        </div>
+        <div class="drawer-footer">
+          <div class="drawer-meta">
+            <span>Chennai, IN · Est. 2024</span>
+            <a href="mailto:hello@grayformstudios.com">hello@grayformstudios.com</a>
+          </div>
+          <a href="#contact" class="btn-drawer-cta">Start a Conversation</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="hero-canvas-container">
+        <canvas id="topo"></canvas>
+        <div class="canvas-ambient-gradient"></div>
+      </div>
+      
+      <div class="hero-container">
+        <div class="hero-tagline-wrap">
+          <span class="hero-tag text-reveal-onload">Grayform Studios · Est. 2024</span>
+        </div>
+        
+        <h1 class="hero-title">
+          <span class="title-line"><span class="text-reveal-onload delay-1">Designing</span></span>
+          <span class="title-line italic-serif"><span class="text-reveal-onload delay-2">human systems</span></span>
+          <span class="title-line"><span class="text-reveal-onload delay-3">for the <span class="highlight-teal">next century</span></span></span>
+        </h1>
+        
+        <p class="hero-sub text-reveal-onload delay-4">
+          We translate neuroscience, psychology, behavioral science, and cultural understanding into products, learning systems, technologies, and experiences designed around real people.
+        </p>
+        
+        <div class="hero-actions text-reveal-onload delay-5">
+          <a href="#domains" class="btn-primary magnetic" data-strength="20">
+            <span>Explore our work</span>
+          </a>
+          <a href="#contact" class="btn-secondary magnetic" data-strength="15">
+            <span>Work with us</span>
+            <svg viewBox="0 0 10 10" fill="none" class="arrow"><path d="M1 9L9 1M9 1H3M9 1V7" stroke="currentColor" stroke-width="1.2"/></svg>
+          </a>
+        </div>
+        
+        <div class="hero-stat-row text-reveal-onload delay-6">
+          <div class="stat-item">
+            <div class="stat-label">Practice</div>
+            <div class="stat-value">Applied Neuroscience</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Domains</div>
+            <div class="stat-value">Mind · Health · Society · Technology</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Public Arm</div>
+            <div class="stat-value">Neuropop</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Belief / Positioning Section -->
+    <section class="belief-section" id="positioning">
+      <div class="belief-grid">
+        <div class="belief-left-col">
+          <div class="sticky-label" data-scroll-speed="-0.5">Philosophy</div>
+          <h2 class="belief-quote split-text">
+            Human behavior is <span class="serif-italic">never</span> context-free.
+          </h2>
+        </div>
+        <div class="belief-right-col">
+          <div class="belief-body-wrap">
+            <p class="belief-body split-text-lines">
+              People don't learn, work, heal, or interact with technology in isolation. Every human experience emerges from the interaction of brain, body, culture, environment, relationships, identity, and lived history. When these factors are ignored — even well-intentioned systems cause harm. We begin where most design ends.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Domains Section -->
+    <section class="domains-section" id="domains">
+      <div class="domains-container">
+        <div class="section-header">
+          <div class="s-eyebrow">What we work on</div>
+          <h2 class="s-title split-text">Four domains. One throughline.</h2>
+          <p class="s-sub">We don't organize around services. We organize around the domains of human experience where behavioral science can change outcomes.</p>
+        </div>
+
+        <div class="domains-grid">
+          <!-- Domain 1: Mind -->
+          <div class="domain-card-outer">
+            <div class="domain-card">
+              <div class="domain-card-bg-glow"></div>
+              <div class="domain-card-header">
+                <span class="domain-index">01</span>
+                <span class="domain-icon-wrapper">
+                  <svg class="domain-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="18" cy="18" r="6" stroke="currentColor" stroke-width="1.2"/>
+                    <circle cx="18" cy="18" r="12" stroke="currentColor" stroke-width="0.8" stroke-dasharray="3 3"/>
+                    <line x1="18" y1="6" x2="18" y2="1.5" stroke="currentColor" stroke-width="1"/>
+                    <line x1="30" y1="18" x2="34.5" y2="18" stroke="currentColor" stroke-width="1"/>
+                    <line x1="6" y1="18" x2="1.5" y2="18" stroke="currentColor" stroke-width="1"/>
+                    <line x1="18" y1="30" x2="18" y2="34.5" stroke="currentColor" stroke-width="1"/>
+                  </svg>
+                </span>
+              </div>
+              <div class="domain-card-body">
+                <h3 class="domain-name text-reveal">Mind</h3>
+                <p class="domain-desc">Cognition, attention, learning, memory, and the architecture of human decision-making. How minds actually work — and how to design with that knowledge.</p>
+              </div>
+              <div class="domain-card-footer">
+                <div class="domain-tags">
+                  <span class="tag">Learning architecture</span>
+                  <span class="tag">Cognitive load</span>
+                  <span class="tag">Behavioral change</span>
+                </div>
+              </div>
+              <div class="domain-bg-letter">M</div>
+            </div>
+          </div>
+
+          <!-- Domain 2: Health -->
+          <div class="domain-card-outer">
+            <div class="domain-card">
+              <div class="domain-card-bg-glow"></div>
+              <div class="domain-card-header">
+                <span class="domain-index">02</span>
+                <span class="domain-icon-wrapper">
+                  <svg class="domain-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 4 C10 4 4 10 4 18 C4 26 10 32 18 32 C26 32 32 26 32 18" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                    <path d="M18 10 C14 10 10 14 10 18 C10 22 14 26 18 26" stroke="currentColor" stroke-width="0.8" stroke-linecap="round"/>
+                    <circle cx="18" cy="18" r="2" fill="currentColor"/>
+                  </svg>
+                </span>
+              </div>
+              <div class="domain-card-body">
+                <h3 class="domain-name text-reveal">Health</h3>
+                <p class="domain-desc">Patient experience, behavioral health systems, clinical communication, and the environmental and emotional factors that shape recovery and wellbeing.</p>
+              </div>
+              <div class="domain-card-footer">
+                <div class="domain-tags">
+                  <span class="tag">Patient experience</span>
+                  <span class="tag">Behavioral health</span>
+                  <span class="tag">Wellbeing design</span>
+                </div>
+              </div>
+              <div class="domain-bg-letter">H</div>
+            </div>
+          </div>
+
+          <!-- Domain 3: Society -->
+          <div class="domain-card-outer">
+            <div class="domain-card card-violet">
+              <div class="domain-card-bg-glow"></div>
+              <div class="domain-card-header">
+                <span class="domain-index">03</span>
+                <span class="domain-icon-wrapper">
+                  <svg class="domain-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="8" cy="18" r="2.5" stroke="currentColor" stroke-width="1.2"/>
+                    <circle cx="18" cy="8" r="2.5" stroke="currentColor" stroke-width="1.2"/>
+                    <circle cx="28" cy="18" r="2.5" stroke="currentColor" stroke-width="1.2"/>
+                    <circle cx="18" cy="28" r="2.5" stroke="currentColor" stroke-width="1.2"/>
+                    <line x1="10.5" y1="16.5" x2="15.5" y2="10.5" stroke="currentColor" stroke-width="0.8"/>
+                    <line x1="20.5" y1="10.5" x2="25.5" y2="15.5" stroke="currentColor" stroke-width="0.8"/>
+                    <line x1="10.5" y1="19.5" x2="15.5" y2="25.5" stroke="currentColor" stroke-width="0.8"/>
+                    <line x1="20.5" y1="25.5" x2="25.5" y2="20.5" stroke="currentColor" stroke-width="0.8"/>
+                  </svg>
+                </span>
+              </div>
+              <div class="domain-card-body">
+                <h3 class="domain-name text-reveal">Society</h3>
+                <p class="domain-desc">Culture, identity, community, equity, and the systems that shape collective human experience. Design that preserves meaning rather than flattening it.</p>
+              </div>
+              <div class="domain-card-footer">
+                <div class="domain-tags">
+                  <span class="tag">Cultural integrity</span>
+                  <span class="tag">Community design</span>
+                  <span class="tag">Equity</span>
+                </div>
+              </div>
+              <div class="domain-bg-letter">S</div>
+            </div>
+          </div>
+
+          <!-- Domain 4: Technology -->
+          <div class="domain-card-outer">
+            <div class="domain-card card-violet">
+              <div class="domain-card-bg-glow"></div>
+              <div class="domain-card-header">
+                <span class="domain-index">04</span>
+                <span class="domain-icon-wrapper">
+                  <svg class="domain-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="4" y="4" width="28" height="28" rx="2" stroke="currentColor" stroke-width="1"/>
+                    <line x1="4" y1="14" x2="32" y2="14" stroke="currentColor" stroke-width="0.8"/>
+                    <line x1="14" y1="14" x2="14" y2="32" stroke="currentColor" stroke-width="0.8"/>
+                    <circle cx="9" cy="9" r="1.5" fill="currentColor" opacity="0.6"/>
+                    <circle cx="19" cy="9" r="1.5" fill="currentColor" opacity="0.6"/>
+                  </svg>
+                </span>
+              </div>
+              <div class="domain-card-body">
+                <h3 class="domain-name text-reveal">Technology</h3>
+                <p class="domain-desc">Human-centered AI, neuroethics, responsible innovation, and the cognitive and social dimensions of emerging technology at scale.</p>
+              </div>
+              <div class="domain-card-footer">
+                <div class="domain-tags">
+                  <span class="tag">Human-AI design</span>
+                  <span class="tag">Neuroethics</span>
+                  <span class="tag">Responsible tech</span>
+                </div>
+              </div>
+              <div class="domain-bg-letter">T</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Neuropop Section -->
+    <section class="neuropop-section" id="neuropop">
+      <div class="neuropop-container">
+        <div class="neuropop-grid">
+          <div class="neuropop-content-col">
+            <span class="neuropop-badge font-mono">Public Arm</span>
+            <h2 class="neuropop-title split-text">
+              Meet <span class="serif-italic">Neuropop</span>
+            </h2>
+            <p class="neuropop-desc">
+              Science should not remain locked inside universities, labs, and consulting reports. Neuropop is Grayform's public engagement and science communication arm — making neuroscience, psychology, and behavioral science accessible, engaging, and culturally relevant to everyone.
+            </p>
+            
+            <div class="formats-list-wrap">
+              <h4 class="formats-title">Engagement Formats</h4>
+              <div class="neuropop-formats">
+                <div class="neuropop-format-item">
+                  <span class="format-dot"></span>
+                  <span class="format-text">Public talks & lectures</span>
+                </div>
+                <div class="neuropop-format-item">
+                  <span class="format-dot"></span>
+                  <span class="format-text">Conferences & events</span>
+                </div>
+                <div class="neuropop-format-item">
+                  <span class="format-dot"></span>
+                  <span class="format-text">Science communication</span>
+                </div>
+                <div class="neuropop-format-item">
+                  <span class="format-dot"></span>
+                  <span class="format-text">Community workshops</span>
+                </div>
+                <div class="neuropop-format-item">
+                  <span class="format-dot"></span>
+                  <span class="format-text">Creative collaborations</span>
+                </div>
+                <div class="neuropop-format-item">
+                  <span class="format-dot"></span>
+                  <span class="format-text">Public discussions</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="neuropop-visual-col">
+            <div class="neuropop-visual-panel">
+              <div class="panel-border-glow"></div>
+              <canvas id="neuropop-canvas"></canvas>
+              <div class="canvas-indicator">
+                <span class="indicator-pulse"></span>
+                <span class="indicator-label">Live Semantic Simulation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Futures Section -->
+    <section class="futures-section" id="futures">
+      <div class="futures-container">
+        <div class="futures-header-grid">
+          <div class="header-left">
+            <div class="s-eyebrow">Futures we are thinking about</div>
+            <h2 class="s-title split-text">The questions shaping<br>what comes next</h2>
+          </div>
+          <div class="header-right">
+            <p class="s-sub">We don't only respond to current problems. We anticipate the human dimensions of emerging futures.</p>
+          </div>
+        </div>
+
+        <!-- Stacked Pinned Cards Scroll Container -->
+        <div class="futures-stack-wrapper">
+          <div class="futures-stack">
+            <!-- Card 01 -->
+            <div class="future-card-item" id="f-card-1">
+              <div class="future-card-inner">
+                <div class="future-card-header">
+                  <span class="future-num font-mono">F — 01</span>
+                  <span class="future-status">Active Research</span>
+                </div>
+                <div class="future-card-content">
+                  <h3 class="future-name">Cognitive liberty</h3>
+                  <p class="future-desc">As neurotechnology advances, who owns the data of your mind? We explore the emerging ethical landscape of mental privacy, cognitive enhancement, and the right to mental self-determination.</p>
+                </div>
+                <div class="future-card-bg-graphic" aria-hidden="true">
+                  <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="30" stroke="currentColor" stroke-width="0.5" stroke-dasharray="1 3"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 02 -->
+            <div class="future-card-item" id="f-card-2">
+              <div class="future-card-inner">
+                <div class="future-card-header">
+                  <span class="future-num font-mono">F — 02</span>
+                  <span class="future-status">Active Research</span>
+                </div>
+                <div class="future-card-content">
+                  <h3 class="future-name">Human–AI collaboration</h3>
+                  <p class="future-desc">AI is not replacing human cognition — it is reshaping it. We study how humans and intelligent systems can be designed to augment each other without eroding autonomy or meaning.</p>
+                </div>
+                <div class="future-card-bg-graphic" aria-hidden="true">
+                  <svg viewBox="0 0 100 100" fill="none"><rect x="25" y="25" width="50" height="50" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2 2"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 03 -->
+            <div class="future-card-item" id="f-card-3">
+              <div class="future-card-inner">
+                <div class="future-card-header">
+                  <span class="future-num font-mono">F — 03</span>
+                  <span class="future-status">Active Research</span>
+                </div>
+                <div class="future-card-content">
+                  <h3 class="future-name">Future learning systems</h3>
+                  <p class="future-desc">The institutions that shape minds are built for a world that no longer exists. We design learning architectures for the cognitive and cultural demands of the 21st century.</p>
+                </div>
+                <div class="future-card-bg-graphic" aria-hidden="true">
+                  <svg viewBox="0 0 100 100" fill="none"><path d="M20 50 L50 20 L80 50 L50 80 Z" stroke="currentColor" stroke-width="0.5"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 04 -->
+            <div class="future-card-item" id="f-card-4">
+              <div class="future-card-inner">
+                <div class="future-card-header">
+                  <span class="future-num font-mono">F — 04</span>
+                  <span class="future-status">Active Research</span>
+                </div>
+                <div class="future-card-content">
+                  <h3 class="future-name">Digital wellbeing</h3>
+                  <p class="future-desc">Attention, affect, and identity are being mediated through screens at unprecedented scale. We examine what healthy human-technology relationships can actually look like.</p>
+                </div>
+                <div class="future-card-bg-graphic" aria-hidden="true">
+                  <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="0.5"/><circle cx="50" cy="50" r="15" stroke="currentColor" stroke-width="0.5" stroke-dasharray="1 1"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 05 -->
+            <div class="future-card-item" id="f-card-5">
+              <div class="future-card-inner">
+                <div class="future-card-header">
+                  <span class="future-num font-mono">F — 05</span>
+                  <span class="future-status">Active Research</span>
+                </div>
+                <div class="future-card-content">
+                  <h3 class="future-name">Neurotechnology &amp; society</h3>
+                  <p class="future-desc">Brain-computer interfaces, neural monitoring, and cognitive augmentation are no longer science fiction. We map their human, social, and ethical implications before they arrive at scale.</p>
+                </div>
+                <div class="future-card-bg-graphic" aria-hidden="true">
+                  <svg viewBox="0 0 100 100" fill="none"><path d="M10 50 Q30 20 50 50 T90 50" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2 2"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 06 -->
+            <div class="future-card-item" id="f-card-6">
+              <div class="future-card-inner">
+                <div class="future-card-header">
+                  <span class="future-num font-mono">F — 06</span>
+                  <span class="future-status">Active Research</span>
+                </div>
+                <div class="future-card-content">
+                  <h3 class="future-name">Emergence &amp; complexity</h3>
+                  <p class="future-desc">Human systems — cities, organizations, cultures, ecosystems — exhibit emergence. We apply complexity science to understand how to design for resilience rather than fragility.</p>
+                </div>
+                <div class="future-card-bg-graphic" aria-hidden="true">
+                  <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="10" stroke="currentColor" stroke-width="0.5"/><circle cx="50" cy="50" r="25" stroke="currentColor" stroke-width="0.5"/><circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="0.5" stroke-dasharray="1 5"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section" id="team">
+      <div class="team-container">
+        <div class="section-header">
+          <div class="s-eyebrow">The team</div>
+          <h2 class="s-title split-text">Built to operate at<br>every scale of human systems</h2>
+        </div>
+
+        <div class="team-grid">
+          <!-- Team Member 1: Zufar -->
+          <div class="team-card-wrapper">
+            <div class="team-card">
+              <div class="team-card-inner">
+                <div class="team-visual">
+                  <div class="team-init-box font-mono">ZF</div>
+                  <div class="team-pattern" aria-hidden="true">
+                    <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="35" stroke="currentColor" stroke-width="0.5" fill="none"/></svg>
+                  </div>
+                </div>
+                <div class="team-info">
+                  <h3 class="team-name">Zufar</h3>
+                  <div class="team-role">Founder · Science &amp; Framework Lead</div>
+                  <p class="team-bio">Grounds every engagement in rigorous behavioral and neuroscientific frameworks. Leads research direction and ensures Grayform's work remains evidence-informed across all domains.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Member 2: Srinand -->
+          <div class="team-card-wrapper">
+            <div class="team-card">
+              <div class="team-card-inner">
+                <div class="team-visual">
+                  <div class="team-init-box font-mono">SR</div>
+                  <div class="team-pattern" aria-hidden="true">
+                    <svg viewBox="0 0 100 100"><rect x="15" y="15" width="70" height="70" stroke="currentColor" stroke-width="0.5" fill="none"/></svg>
+                  </div>
+                </div>
+                <div class="team-info">
+                  <h3 class="team-name">Srinand</h3>
+                  <div class="team-role">Co-founder · Behavioral Health Lead</div>
+                  <p class="team-bio">Leads the studio's behavioral health practice, shaping how Grayform approaches patient experience, clinical wellbeing, and health systems design at the intersection of science and culture.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Member 3: Sanah -->
+          <div class="team-card-wrapper">
+            <div class="team-card">
+              <div class="team-card-inner">
+                <div class="team-visual">
+                  <div class="team-init-box font-mono">SN</div>
+                  <div class="team-pattern" aria-hidden="true">
+                    <svg viewBox="0 0 100 100"><path d="M50 15 L85 75 L15 75 Z" stroke="currentColor" stroke-width="0.5" fill="none"/></svg>
+                  </div>
+                </div>
+                <div class="team-info">
+                  <h3 class="team-name">Sanah</h3>
+                  <div class="team-role">Visibility Lead</div>
+                  <p class="team-bio">Shapes how Grayform shows up in the world — building presence, narrative, and the connections that bring the right collaborators, clients, and conversations into the studio's orbit.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recruiting Card -->
+          <div class="team-card-wrapper">
+            <div class="team-card recruitment-card">
+              <div class="team-card-inner">
+                <div class="recruitment-header">
+                  <span class="pulse-indicator"></span>
+                  <span class="recruitment-label font-mono">Collaborate</span>
+                </div>
+                <h3 class="recruitment-title">We are building.</h3>
+                <p class="recruitment-desc">If you live at the intersection of behavioral science, design, and futures — we'd like to meet you.</p>
+                <a href="#contact" class="btn-recruitment-contact magnetic" data-strength="10">
+                  <span>Get in touch</span>
+                  <svg class="arrow" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H3M9 1V7" stroke="currentColor" stroke-width="1"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collaboration / Contact Section -->
+    <section class="contact-section" id="contact">
+      <div class="contact-ambient-glow" id="contact-glow"></div>
+      
+      <div class="contact-container">
+        <div class="contact-inner">
+          <span class="contact-eyebrow font-mono">Start a conversation</span>
+          <h2 class="contact-title split-text">
+            Let's design something<br>that actually works for people
+          </h2>
+          <p class="contact-sub">
+            Whether you're building a product, a learning system, a health experience, or navigating the human dimensions of emerging technology — we're ready to think with you.
+          </p>
+          
+          <div class="contact-actions">
+            <div class="magnetic-wrap">
+              <a href="mailto:hello@grayformstudios.com" class="btn-email-primary magnetic" data-strength="25">
+                <span class="email-text">hello@grayformstudios.com</span>
+                <span class="btn-hover-arrow">
+                  <svg viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H3M9 1V7" stroke="currentColor" stroke-width="1.5"/></svg>
+                </span>
+              </a>
+            </div>
+            
+            <a href="#domains" class="btn-explore-domains magnetic" data-strength="15">
+              <span>Explore our domains</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-inner">
+      <div class="footer-brand-section">
+        <span class="footer-logo">Gray<span class="serif-text">form</span> Studios</span>
+        <span class="footer-tagline">Applied Neuroscience · Behavioral Health · Human Systems Design</span>
+      </div>
+      <div class="footer-meta-section">
+        <span class="footer-location font-mono">Chennai</span>
+        <span class="footer-copyright font-mono">© 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

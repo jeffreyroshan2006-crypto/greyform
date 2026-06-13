@@ -1,0 +1,5 @@
+node_modules/
+dist/
+.kilocode/
+*.log
+.DS_Store
