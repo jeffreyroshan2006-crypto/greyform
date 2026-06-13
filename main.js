@@ -58,38 +58,17 @@ function initLenis() {
 // 2. PRELOADER & HERO INTRO
 // --------------------------------------------------------------------------
 function initPreloader() {
-  const counterEl = document.getElementById('loader-counter');
-  const progressBarEl = document.getElementById('loader-progress');
-  const phraseEl = document.getElementById('loader-phrase');
-  
-  const phrases = [
-    'Initializing cognitive frameworks...',
-    'Loading neural networks...',
-    'Establishing social environments...',
-    'Formatting memory traces...',
-    'Calibrating public arm...',
-    'Mapping emergent future systems...',
-    'Ready.'
-  ];
-
-  let count = 0;
-  let phraseIndex = 0;
-  
-  const interval = setInterval(() => {
-    // Tick up speed varies for organic feel
-    const increment = Math.floor(Math.random() * 4) + 1;
-    count = Math.min(100, count + increment);
-    
-    // Update counter & progress bar
-    if (counterEl) counterEl.textContent = count.toString().padStart(2, '0');
-    if (progressBarEl) progressBarEl.style.width = `${count}%`;
-    
-    // Rotate phrases based on progress threshold
-    const step = Math.floor(100 / phrases.length);
-    phraseIndex = Math.min(phrases.length - 1, Math.floor(count / step));
-    if (phraseEl && phrases[phraseIndex]) {
-      phraseEl.textContent = phrases[phraseIndex];
-    }
+  const preloader = document.getElementById('preloader');
+  const header = document.getElementById('main-header');
+  if (preloader) preloader.style.display = 'none';
+  if (header) {
+    header.style.transform = 'translateY(0)';
+    header.style.opacity = '1';
+    header.style.visibility = 'visible';
+  }
+  document.body.style.overflow = '';
+  if (lenis) lenis.start();
+}
     
     if (count >= 100) {
       clearInterval(interval);
