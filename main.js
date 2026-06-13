@@ -182,8 +182,20 @@ function initHeroCanvas() {
   let mouse = { x: null, y: null, targetX: null, targetY: null };
 
   function resize() {
-    W = canvas.width = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
+    const rect = canvas.getBoundingClientRect();
+    const dpr = window.devicePixelRatio || 1;
+    
+    // Set canvas resolution for sharp DPI rendering
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.height * dpr;
+    
+    // Use logical CSS dimensions for calculations
+    W = rect.width;
+    H = rect.height;
+    
+    // Reset and scale context for DPI
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.scale(dpr, dpr);
     
     // Clear and re-populate particles based on screen density
     pts = [];
@@ -351,8 +363,20 @@ function initNeuropopCanvas() {
 
   function resize() {
     const parent = canvas.parentElement;
-    W = canvas.width = parent.clientWidth;
-    H = canvas.height = parent.clientHeight;
+    const rect = parent.getBoundingClientRect();
+    const dpr = window.devicePixelRatio || 1;
+    
+    // Set canvas resolution for sharp DPI rendering
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.height * dpr;
+    
+    // Use logical CSS dimensions for calculations
+    W = rect.width;
+    H = rect.height;
+    
+    // Reset and scale context for DPI
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.scale(dpr, dpr);
     
     // Repopulate nodes matching current dims
     nodes = [];
@@ -457,29 +481,31 @@ function initNeuropopCanvas() {
       ctx.fillStyle = `rgba(167, 139, 250, ${0.4 + pulse * 0.4})`;
       ctx.fill();
 
-      // Label text - clearer rendering
-      const baseFontSize = isMobileWidth() ? 14 : 12;
+      // Label text - ultra crisp rendering
+      const baseFontSize = isMobileWidth() ? 16 : 14;
       const fontSize = Math.floor(baseFontSize * n.sizeMod);
-      const fontWeight = isMobileWidth() ? '600' : '500';
+      const fontWeight = '700';
       ctx.font = `${fontWeight} ${fontSize}px 'Plus Jakarta Sans', sans-serif`;
       
-      // Higher opacity base, with stronger hover contrast
-      const baseAlpha = isMobileWidth() ? 0.75 : 0.55;
-      const alphaBoost = (n.sizeMod - 1.0) * 1.8;
-      const pulseAlpha = pulse * 0.2;
-      const finalAlpha = Math.min(1, baseAlpha + alphaBoost + pulseAlpha);
+      // High opacity for crispness
+      const baseAlpha = isMobileWidth() ? 0.9 : 0.85;
+      const alphaBoost = (n.sizeMod - 1.0) * 1.2;
+      const finalAlpha = Math.min(1, baseAlpha + alphaBoost);
       ctx.fillStyle = `rgba(243, 245, 248, ${finalAlpha})`;
       
       ctx.textAlign = 'center';
       ctx.textBaseline = 'bottom';
       
-      // Add subtle text shadow for better readability
-      ctx.shadowColor = 'rgba(0, 0, 0, 0.8)';
-      ctx.shadowBlur = isMobileWidth() ? 3 : 2;
+      // Strong crisp shadow for contrast
+      ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+      ctx.shadowBlur = isMobileWidth() ? 4 : 3;
       ctx.shadowOffsetX = 0;
-      ctx.shadowOffsetY = 1;
+      ctx.shadowOffsetY = 2;
       
+      // Draw text with subpixel precision
+      ctx.translate(0.5, 0.5);
       ctx.fillText(n.label.toUpperCase(), n.x, n.y - (n.r + fontSize + 2) * n.sizeMod);
+      ctx.translate(-0.5, -0.5);
       
       // Reset shadow
       ctx.shadowColor = 'transparent';
