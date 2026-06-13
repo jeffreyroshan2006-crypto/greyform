@@ -457,12 +457,33 @@ function initNeuropopCanvas() {
       ctx.fillStyle = `rgba(167, 139, 250, ${0.4 + pulse * 0.4})`;
       ctx.fill();
 
-      // Label text
-      const fontSize = Math.floor(9 * n.sizeMod);
-      ctx.font = `500 ${fontSize}px 'Plus Jakarta Sans', sans-serif`;
-      ctx.fillStyle = `rgba(243, 245, 248, ${0.35 + (n.sizeMod - 1.0) * 1.5 + pulse * 0.15})`;
+      // Label text - clearer rendering
+      const baseFontSize = isMobileWidth() ? 14 : 12;
+      const fontSize = Math.floor(baseFontSize * n.sizeMod);
+      const fontWeight = isMobileWidth() ? '600' : '500';
+      ctx.font = `${fontWeight} ${fontSize}px 'Plus Jakarta Sans', sans-serif`;
+      
+      // Higher opacity base, with stronger hover contrast
+      const baseAlpha = isMobileWidth() ? 0.75 : 0.55;
+      const alphaBoost = (n.sizeMod - 1.0) * 1.8;
+      const pulseAlpha = pulse * 0.2;
+      const finalAlpha = Math.min(1, baseAlpha + alphaBoost + pulseAlpha);
+      ctx.fillStyle = `rgba(243, 245, 248, ${finalAlpha})`;
+      
       ctx.textAlign = 'center';
-      ctx.fillText(n.label.toUpperCase(), n.x, n.y - (n.r + fontSize + 4) * n.sizeMod);
+      ctx.textBaseline = 'bottom';
+      
+      // Add subtle text shadow for better readability
+      ctx.shadowColor = 'rgba(0, 0, 0, 0.8)';
+      ctx.shadowBlur = isMobileWidth() ? 3 : 2;
+      ctx.shadowOffsetX = 0;
+      ctx.shadowOffsetY = 1;
+      
+      ctx.fillText(n.label.toUpperCase(), n.x, n.y - (n.r + fontSize + 2) * n.sizeMod);
+      
+      // Reset shadow
+      ctx.shadowColor = 'transparent';
+      ctx.shadowBlur = 0;
     });
 
     requestAnimationFrame(draw);

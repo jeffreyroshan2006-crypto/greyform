@@ -2502,13 +2502,19 @@ body.cursor-hovering .custom-cursor-follower {
   }
 
   .canvas-indicator {
-    bottom: 1rem;
-    left: 1rem;
-    padding: 0.3rem 0.6rem;
+    bottom: 1.2rem;
+    left: 1.2rem;
+    padding: 0.4rem 0.8rem;
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(167, 139, 250, 0.4);
+    backdrop-filter: blur(4px);
   }
 
   .indicator-label {
-    font-size: 0.55rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
   }
 
   /* Futures cards mobile */
